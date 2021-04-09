@@ -95,7 +95,7 @@ const iteratorDataRows = async (arrData, url, filename) => {
         const row = arrData[index];
         global.logger.info("Record #: " + record);
         const resp = await requestMethod(url, row, 180000);
-        console.log(resp);
+        //console.log(resp);
         const myJson = {
             record: record,
             status: resp.response,
@@ -110,7 +110,7 @@ const iteratorDataRows = async (arrData, url, filename) => {
             comparendo_numero: row.comparendo_numero,
             sede: resp.result ? resp.result.Sede : "",
             modulo: resp.result ? resp.result.Modulo : "",
-            fecha_agendamiento_impugnacion: resp.result ? resp.result.FechaAgenda : ""
+            fecha_agendamiento_impugnacion: resp.result ? resp.result.FechaAgendaImpugnacion : ""
         };
         console.log(myJson);
         responseData.push(myJson);
